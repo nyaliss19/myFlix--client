@@ -33124,6 +33124,7 @@ var MovieCard = /*#__PURE__*/function (_React$Component) {
   _createClass(MovieCard, [{
     key: "render",
     value: function render() {
+      var movie = this.props.movie;
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "movie-card"
       }, "some Title");
@@ -33191,7 +33192,10 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "main-view"
       }, movies.map(function (movie) {
-        return /*#__PURE__*/_react.default.createElement(_movieCard.MovieCard, null);
+        return /*#__PURE__*/_react.default.createElement(_movieCard.MovieCard, {
+          key: movie._id,
+          movie: movie
+        });
       }));
     }
   }]);
@@ -33361,7 +33365,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52643" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52879" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

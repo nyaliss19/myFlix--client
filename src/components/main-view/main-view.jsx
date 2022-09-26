@@ -1,7 +1,10 @@
-import React from "react";
-import axios from "axios";
-import { MovieCard } from "../movie-card/movie-card";
-import { MovieView } from "../movie-view/movie-view";
+import React from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+
+import { LoginView } from '../login-view/login-view';
+import { MovieCard } from '../movie-card/movie-card';
+import { MovieView } from '../movie-view/movie-view';
 
 export class MainView extends React.Component {
   constructor() {
@@ -9,12 +12,13 @@ export class MainView extends React.Component {
     this.state = {
       movies: [],
       selectedMovie: null,
+      user: null,
     };
   }
 
   componentDidMount() {
     axios
-      .get("https://nyaliss-flix-27.herokuapp.com/movies")
+      .get('https://nyaliss-flix-27.herokuapp.com/movies')
       .then((response) => {
         this.setState({
           movies: response.data,
@@ -31,14 +35,20 @@ export class MainView extends React.Component {
     });
   }
 
+  onLoggedIn(user) {
+    this.setState({
+      user,
+    });
+  }
+
   render() {
     const { movies, selectedMovie } = this.state;
 
     if (movies.length === 0)
-      return <div className="main-view">The list is empty!</div>;
+      return <div className='main-view'>The list is empty!</div>;
 
     return (
-      <div className="main-view">
+      <div className='main-view'>
         {selectedMovie ? (
           <MovieView
             movie={selectedMovie}

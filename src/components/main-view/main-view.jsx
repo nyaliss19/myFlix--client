@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { RegistrationView } from '../registration-view/registration-view';
 
 export class MainView extends React.Component {
   constructor() {
@@ -48,26 +49,44 @@ export class MainView extends React.Component {
       return <div className='main-view'>The list is empty!</div>;
 
     return (
-      <div className='main-view'>
-        {selectedMovie ? (
-          <MovieView
-            movie={selectedMovie}
-            onBackClick={(newSelectedMovie) => {
-              this.setSelectedMovie(newSelectedMovie);
+      <>
+        <div className='buttons'>
+          <button
+            onClick={() => {
+              LoginView(props);
             }}
-          />
-        ) : (
-          movies.map((movie) => (
-            <MovieCard
-              key={movie._id}
-              movie={movie}
-              onMovieClick={(movie) => {
-                this.setSelectedMovie(movie);
+          >
+            Login
+          </button>
+          <button
+            onClick={() => {
+              RegistrationView(props);
+            }}
+          >
+            Register
+          </button>
+        </div>
+        <div className='main-view'>
+          {selectedMovie ? (
+            <MovieView
+              movie={selectedMovie}
+              onBackClick={(newSelectedMovie) => {
+                this.setSelectedMovie(newSelectedMovie);
               }}
             />
-          ))
-        )}
-      </div>
+          ) : (
+            movies.map((movie) => (
+              <MovieCard
+                key={movie._id}
+                movie={movie}
+                onMovieClick={(movie) => {
+                  this.setSelectedMovie(movie);
+                }}
+              />
+            ))
+          )}
+        </div>
+      </>
     );
   }
 }

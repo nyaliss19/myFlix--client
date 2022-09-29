@@ -6,6 +6,7 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { LogoutButton } from '../logout-button/logout-button';
 
 export class MainView extends React.Component {
   constructor() {
@@ -14,6 +15,7 @@ export class MainView extends React.Component {
       movies: [],
       selectedMovie: null,
       user: null,
+      registered: true,
     };
   }
 
@@ -36,46 +38,85 @@ export class MainView extends React.Component {
     });
   }
 
+  // passed to LoginView
   onLoggedIn(user) {
     this.setState({
       user,
     });
   }
 
-  render() {
-    const { movies, selectedMovie } = this.state;
+  // passed to RegistrationView
+  onRegister(registered, user) {
+    this.setState({
+      registered,
+      user,
+    });
+  }
 
+  // passed to LogoutButton
+  logoutUser(uselessParam) {
+    this.setState({
+      user: false,
+      selectedMovie: null,
+    });
+  }
+
+  toRegistrationView(asdf) {
+    this.setState({
+      registered: false,
+    });
+  }
+
+  render() {
+    const { movies, selectedMovie, user, registered } = this.state;
+
+    // RegistrationView if user not registered
+    if (!registered)
+      return (
+        <RegistrationView
+          onRegister={(registered, username) =>
+            this.onRegister(registered, username)
+          }
+        />
+      );
+
+    // LoginView if user is registered, but not logged in
+    if (!user)
+      return (
+        <LoginView
+          onLoggedIn={(user) => this.onLoggedIn(user)}
+          toRegistrationView={(asdf) => this.toRegistrationView(asdf)}
+        />
+      );
+
+    // Empty MainView if there are no movies (or still loading)
     if (movies.length === 0)
       return <div className='main-view'>The list is empty!</div>;
 
+    // if we get here then user is registered and logged in
+    // Render list of MovieCard if no movie is selected
+    // Go to MovieView if a movie is selected
     return (
-      <>
-        <div className='buttons'>
-          <button
-            onClick={() => {
-              LoginView(props);
-            }}
-          >
-            Login
-          </button>
-          <button
-            onClick={() => {
-              RegistrationView(props);
-            }}
-          >
-            Register
-          </button>
-        </div>
-        <div className='main-view'>
-          {selectedMovie ? (
+      <div className='main-view'>
+        {selectedMovie ? (
+          <div>
+            <LogoutButton
+              logoutUser={(uselessParam) => this.logoutUser(uselessParam)}
+            />
             <MovieView
               movie={selectedMovie}
               onBackClick={(newSelectedMovie) => {
                 this.setSelectedMovie(newSelectedMovie);
               }}
             />
-          ) : (
-            movies.map((movie) => (
+          </div>
+        ) : (
+          <div>
+            <LogoutButton
+              logoutUser={(uselessParam) => this.logoutUser(uselessParam)}
+            />
+            <h1>Movies</h1>
+            {movies.map((movie) => (
               <MovieCard
                 key={movie._id}
                 movie={movie}
@@ -83,10 +124,10 @@ export class MainView extends React.Component {
                   this.setSelectedMovie(movie);
                 }}
               />
-            ))
-          )}
-        </div>
-      </>
+            ))}
+          </div>
+        )}
+      </div>
     );
   }
 }

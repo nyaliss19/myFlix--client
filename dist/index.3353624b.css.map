@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;ACEA","sources":["src/components/logout-button/logout-button.scss","src/index.scss"],"sourcesContent":[".logout-button {\r\n  float: right;\r\n}\r\n","$color: steelblue;\r\n\r\n.my-flix {\r\n  color: $color;\r\n}\r\n"],"names":[],"version":3,"file":"index.3353624b.css.map","sourceRoot":"/__parcel_source_root/"}

@@ -27230,6 +27230,7 @@ class MainView extends (0, _reactDefault.default).Component {
         }, this);
     }
 }
+MainView.propTypes = {};
 exports.default = MainView;
 
   $parcel$ReactRefreshHelpers$f7a6.postlude(module);
@@ -28355,6 +28356,7 @@ class MovieView extends (0, _reactDefault.default).Component {
         }, this);
     }
 }
+MovieView.propTypes = {};
 
   $parcel$ReactRefreshHelpers$e9f6.postlude(module);
 } finally {
@@ -31652,6 +31654,7 @@ function LoginView(props) {
 }
 _s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
 _c = LoginView;
+LoginView.propTypes = {};
 var _c;
 $RefreshReg$(_c, "LoginView");
 

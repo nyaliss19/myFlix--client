@@ -132,4 +132,6 @@ export class MainView extends React.Component {
   }
 }
 
+MainView.propTypes = {};
+
 export default MainView;

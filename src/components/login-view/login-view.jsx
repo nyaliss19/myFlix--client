@@ -37,3 +37,5 @@ export function LoginView(props) {
     </form>
   );
 }
+
+LoginView.propTypes = {};

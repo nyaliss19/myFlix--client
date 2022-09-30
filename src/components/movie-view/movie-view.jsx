@@ -49,3 +49,5 @@ export class MovieView extends React.Component {
     );
   }
 }
+
+MovieView.propTypes = {};

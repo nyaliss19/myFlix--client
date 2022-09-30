@@ -1,0 +1,172 @@
+.movie-card {
+  max-width: 300px;
+  color: #000;
+  background-color: #f0f0f0;
+  border: 3px solid #000;
+  border-radius: 15px;
+  margin: 20px auto;
+  padding: 5px;
+  line-height: 2em;
+  box-shadow: 0 0 5px 5px #00000080;
+}
+
+.movie-card:hover {
+  cursor: pointer;
+  background-color: #e7e7e7;
+}
+
+.movie-view {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px #00000080;
+}
+
+img {
+  max-width: 100%;
+  max-height: 500px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+}
+
+.movie-view-button {
+  background-color: #fff;
+  border: none;
+  margin: 15px;
+  font-size: 30px;
+}
+
+.movie-view-button:hover {
+  cursor: pointer;
+}
+
+.movie-view__title-line {
+  text-align: left;
+  font-size: 28px;
+  font-weight: 600;
+  display: block;
+}
+
+.movie-view__line {
+  display: block;
+}
+
+.movie-view__line__label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.movie-view__line__value {
+  font-size: 18px;
+}
+
+.movie-view__grid {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+}
+
+.movie-info {
+  grid-template-rows: 50px 50px 4fr;
+  display: grid;
+}
+
+.description {
+  padding-top: 3em;
+}
+
+@media (max-width: 700px) {
+  .movie-view__grid {
+    display: block;
+  }
+
+  .description {
+    padding-top: 1em;
+  }
+
+  .movie-view__title-line {
+    font-size: 20px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.login-view {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 50px;
+  display: block;
+}
+
+.login-form {
+  max-width: 280px;
+  margin: 0 auto;
+  display: block;
+}
+
+.login-from__line {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+}
+
+@media (max-width: 350px) {
+  .login-form__line, .login-form__line__input-field {
+    display: block;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.registration-view {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 50px;
+  display: block;
+}
+
+.registration-form {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 2em;
+  display: block;
+}
+
+.registration-form__line__label {
+  display: inline;
+}
+
+.registration-form__line__input-field {
+  width: 200px;
+  display: inline;
+}
+
+.registration-form__login-button {
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .registration-form__line, .registration-form__line__input-field {
+    display: block;
+  }
+}
+
+.logout-button {
+  float: right;
+}
+
+.my-flix {
+  color: #4682b4;
+}
+
+/*# sourceMappingURL=index.e3f97e84.css.map */

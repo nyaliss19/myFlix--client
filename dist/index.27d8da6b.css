@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+.login-view {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 50px;
+  display: block;
+}
+
+.login-form {
+  max-width: 280px;
+  margin: 0 auto;
+  display: block;
+}
+
+.login-from__line {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+}
+
+@media (max-width: 350px) {
+  .login-form__line, .login-form__line__input-field {
+    display: block;
+  }
+}
+
+.logout-button {
+  float: right;
+}
+
+.my-flix {
+  color: #4682b4;
+}
+
+/*# sourceMappingURL=index.27d8da6b.css.map */

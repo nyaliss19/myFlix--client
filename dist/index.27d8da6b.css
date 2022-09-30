@@ -29,6 +29,47 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.registration-view {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 50px;
+  display: block;
+}
+
+.registration-form {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 2em;
+  display: block;
+}
+
+.registration-form__line__label {
+  display: inline;
+}
+
+.registration-form__line__input-field {
+  width: 200px;
+  display: inline;
+}
+
+.registration-form__login-button {
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .registration-form__line, .registration-form__line__input-field {
+    display: block;
+  }
+}
+
 .logout-button {
   float: right;
 }

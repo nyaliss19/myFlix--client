@@ -1,56 +1,100 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import './registration-view.scss';
+
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [password1, setPassword1] = useState('');
+  const [password2, setPassword2] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthday);
-    props.onRegister(username);
+    props.onRegister(true, username);
   };
 
   return (
-    <form>
-      <h1>Registration</h1>
-      <label>
-        Username:
-        <input
-          type='text'
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <label>
-        Email:
-        <input
-          type='email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
-      <label>
-        Birthday:
-        <input
-          type='birthday'
-          value={birthday}
-          onChange={(e) => setBirthday(e.target.value)}
-        />
-      </label>
-      <button type='submit' onClick={handleSubmit}>
-        Submit
-      </button>
-    </form>
+    <div className='registration-view'>
+      <h2>Sign up for a free MyFlix account:</h2>
+
+      <form className='registration-form'>
+        <div className='registration-form__line'>
+          <label className='registration-form__line-label'>Username:</label>
+          <input
+            className='registration-form__line__input-field'
+            type='text'
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <span className='registration-form__label-tips'>
+            5+ characters, no spaces
+          </span>
+        </div>
+
+        <div class='registration-form__line'>
+          <label className='registration-form__line-label'>
+            Enter desired password:
+          </label>
+          <input
+            className='registration-form__line__input-field'
+            type='text'
+            value={password1}
+            onChange={(e) => setPassword1(e.target.value)}
+          />
+          <span className='registration-form__label-tips'>
+            must not be blank
+          </span>
+        </div>
+
+        <div className='registration-form__line'>
+          <label className='registration-form__line-label'>
+            Re-enter password:
+          </label>
+          <input
+            className='registration-form__line__input-field'
+            type='text'
+            value={password2}
+            onChange={(e) => setPassword2(e.target.value)}
+          />
+          <span className='registration-form__label-tips'>
+            passwords must match
+          </span>
+        </div>
+
+        <div className='registration-form__line'>
+          <label className='registration-form__line-label'>Email:</label>
+          <input
+            className='registration-form__line__input-field'
+            type='text'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <span className='registration-form__label-tips'>required</span>
+        </div>
+
+        <div className='registration-form__line'>
+          <label
+            class='registration-form__line-label'
+            className='registration-form__line'
+          >
+            Birthday:
+          </label>
+          <input
+            className='registration-form__line__input-field'
+            type='text'
+            value={birthday}
+            onChange={(e) => setBirthday(e.target.value)}
+          />
+          <span className='registration-form__label-tips'>optional</span>
+        </div>
+
+        <button type='submit' onClick={handleSubmit}>
+          Register
+        </button>
+      </form>
+    </div>
   );
 }
 

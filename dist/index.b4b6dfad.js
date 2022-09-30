@@ -28326,7 +28326,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "movie-poster",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                src: imgPath + movie.ImagePath
+                                src: movie.ImagePath
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
                                 lineNumber: 61,
@@ -28341,16 +28341,6 @@ class MovieView extends (0, _reactDefault.default).Component {
                 }, void 0, true, {
                     fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 34,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: ()=>{
-                        onBackClick(null);
-                    },
-                    children: "Back"
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 64,
                     columnNumber: 9
                 }, this)
             ]

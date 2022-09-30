@@ -58,16 +58,9 @@ export class MovieView extends React.Component {
 
           {/* Grid column 2 */}
           <div className='movie-poster'>
-            <img src={imgPath + movie.ImagePath} />
+            <img src={movie.ImagePath} />
           </div>
         </div>
-        <button
-          onClick={() => {
-            onBackClick(null);
-          }}
-        >
-          Back
-        </button>
       </div>
     );
   }

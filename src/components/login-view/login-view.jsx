@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import './login-view.scss';
+
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -13,29 +15,56 @@ export function LoginView(props) {
     props.onLoggedIn(username);
   };
 
+  const handleClickRegister = (e) => {
+    e.preventDefault();
+    props.toRegistrationView('');
+  };
+
   return (
-    <form>
-      <label>
-        Username:
-        <input
-          type='text'
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <button type='submit' onClick={handleSubmit}>
-        Submit
-      </button>
-    </form>
+    <div className='login-view'>
+      <h2>Login to myFlix</h2>
+
+      <form className='login-form'>
+        <div className='login-form__line'>
+          <label className='login-form__line__label'>Username:</label>
+          <input
+            className='login-form__line__input-field'
+            type='text'
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+
+        <div className='login-form__line'>
+          <label className='login-form__line__label'>Password:</label>
+          <input
+            className='login-form__line__input-field'
+            type='text'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+
+        <button
+          className='login-form__login-button'
+          type='submit'
+          onClick={handleSubmit}
+        >
+          Log In
+        </button>
+      </form>
+
+      <div>
+        <span>Don't have an account? </span>
+        <button type='submit' onClick={handleClickRegister}>
+          Register
+        </button>
+      </div>
+    </div>
   );
 }
 
-LoginView.propTypes = {};
+LoginView.propTypes = {
+  onLoggedIn: PropTypes.func.isRequired,
+  toRegistrationView: PropTypes.func.isRequired,
+};

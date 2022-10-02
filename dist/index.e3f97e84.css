@@ -1,19 +1,4 @@
-.movie-card {
-  max-width: 300px;
-  color: #000;
-  background-color: #f0f0f0;
-  border: 3px solid #000;
-  border-radius: 15px;
-  margin: 20px auto;
-  padding: 5px;
-  line-height: 2em;
-  box-shadow: 0 0 5px 5px #00000080;
-}
 
-.movie-card:hover {
-  cursor: pointer;
-  background-color: #e7e7e7;
-}
 
 .movie-view {
   background-color: #fff;
@@ -161,8 +146,9 @@ img {
   }
 }
 
-.logout-button {
-  float: right;
+#logout-button {
+  background-color: inherit;
+  border: none;
 }
 
 

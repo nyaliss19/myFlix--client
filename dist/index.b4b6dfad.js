@@ -29580,8 +29580,12 @@ class MovieView extends (0, _reactDefault.default).Component {
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                     className: "movie-view__title",
-                                    children: movie.Title
-                                }, void 0, false, {
+                                    children: [
+                                        " ",
+                                        movie.Title,
+                                        " "
+                                    ]
+                                }, void 0, true, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
                                     lineNumber: 33,
                                     columnNumber: 13
@@ -34304,7 +34308,6 @@ function LogoutButton(props) {
         props.logoutUser("useless param");
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-        className: "btn btn-link float-sm-right",
         id: "logout-button",
         type: "button",
         onClick: handleLogout,

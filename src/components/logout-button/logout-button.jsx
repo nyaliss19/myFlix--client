@@ -11,12 +11,7 @@ export function LogoutButton(props) {
   };
 
   return (
-    <Button
-      className='btn btn-link float-sm-right'
-      id='logout-button'
-      type='button'
-      onClick={handleLogout}
-    >
+    <Button id='logout-button' type='button' onClick={handleLogout}>
       Logout
     </Button>
   );

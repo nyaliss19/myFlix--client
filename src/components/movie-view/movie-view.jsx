@@ -30,7 +30,7 @@ export class MovieView extends React.Component {
             >
               &lt;
             </Button>
-            <span className='movie-view__title'>{movie.Title}</span>
+            <span className='movie-view__title'> {movie.Title} </span>
             <Button className='movie-view-button'>&#10032;</Button>
           </div>
 

@@ -2,15 +2,17 @@
   border: 2px solid black;
   border-radius: 10px;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
-  background-color: white;
+  background-color: #cdd3d5;
 }
 
 img {
   display: block;
+  border-radius: 25px;
   max-width: 100%;
   max-height: 700px;
   height: auto;
   margin: 20px auto;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 #back-button {
@@ -38,12 +40,15 @@ img {
 .movie-view__title-line {
   font-size: 28px;
   font-weight: 600;
+  font-family: Lucida Console;
+  padding: 2px;
 }
 
 .movie-view__line__label {
   font-size: 20px;
   font-weight: 600;
 }
+
 .movie-view__line__value {
   font-size: 18px;
 }

@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 import './movie-view.scss';
 
@@ -16,23 +19,21 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-      <div className='movie-view'>
-        {/* This is on top of grid */}
-        <div className='movie-view__title-line'>
-          <button
-            className='movie-view-button'
-            onClick={() => {
-              onBackClick(null);
-            }}
-          >
-            &lt;
-          </button>
-          <span className='movie-view__title'>{movie.Title}</span>
-          <button className='movie-view-button'>&#10032;</button>
-        </div>
+      <Row className='movie-view'>
+        <Col lg={8}>
+          <div className='movie-view__title-line'>
+            <Button
+              className='movie-view-button'
+              onClick={() => {
+                onBackClick(null);
+              }}
+            >
+              &lt;
+            </Button>
+            <span className='movie-view__title'>{movie.Title}</span>
+            <Button className='movie-view-button'>&#10032;</Button>
+          </div>
 
-        <div className='movie-view__grid'>
-          {/* Grid column 1 */}
           <div className='movie-info'>
             <div className='movie-view__line'>
               <span className='movie-view__line__label'>Genre: </span>
@@ -55,13 +56,14 @@ export class MovieView extends React.Component {
               </span>
             </div>
           </div>
+        </Col>
 
-          {/* Grid column 2 */}
+        <Col lg={4}>
           <div className='movie-poster'>
             <img src={movie.ImagePath} />
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     );
   }
 }

@@ -9,7 +9,6 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { LogoutButton } from '../logout-button/logout-button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
 
 import './main-view.scss';
 

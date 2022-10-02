@@ -48,6 +48,21 @@ export function LoginView(props) {
           </Row>
         </Form.Group>
 
+        <Form.Group controlId='formPassword'>
+          <Row className='login-view__line'>
+            <Col sm={0} md={3}></Col>
+            <Col sm={12} md={2}>
+              <Form.Label>Password:</Form.Label>
+            </Col>
+            <Col sm={12} md={4}>
+              <Form.Control
+                type='text'
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Col>
+          </Row>
+        </Form.Group>
+
         <Row className='login-view__line'>
           <Col md={8}></Col>
           <Col>

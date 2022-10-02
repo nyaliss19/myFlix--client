@@ -27100,8 +27100,6 @@ var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
-var _container = require("react-bootstrap/Container");
-var _containerDefault = parcelHelpers.interopDefault(_container);
 var _mainViewScss = require("./main-view.scss");
 class MainView extends (0, _reactDefault.default).Component {
     constructor(){
@@ -27159,7 +27157,7 @@ class MainView extends (0, _reactDefault.default).Component {
             onRegister: (registered, username)=>this.onRegister(registered, username)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 81,
+            lineNumber: 80,
             columnNumber: 9
         }, this);
         // LoginView if user is registered, but not logged in
@@ -27168,7 +27166,7 @@ class MainView extends (0, _reactDefault.default).Component {
             toRegistrationView: (asdf)=>this.toRegistrationView(asdf)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 91,
+            lineNumber: 90,
             columnNumber: 9
         }, this);
         // Empty MainView if there are no movies (or still loading)
@@ -27177,7 +27175,7 @@ class MainView extends (0, _reactDefault.default).Component {
             children: "The list is empty!"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 99,
+            lineNumber: 98,
             columnNumber: 14
         }, this);
         // if we get here then user is registered and logged in
@@ -27192,17 +27190,17 @@ class MainView extends (0, _reactDefault.default).Component {
                             logoutUser: (uselessParam)=>this.logoutUser(uselessParam)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 108,
+                            lineNumber: 107,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 107,
+                        lineNumber: 106,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 106,
+                    lineNumber: 105,
                     columnNumber: 9
                 }, this),
                 selectedMovie ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -27214,17 +27212,17 @@ class MainView extends (0, _reactDefault.default).Component {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 116,
+                            lineNumber: 115,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 115,
+                        lineNumber: 114,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 114,
+                    lineNumber: 113,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     children: [
@@ -27237,17 +27235,17 @@ class MainView extends (0, _reactDefault.default).Component {
                                     children: "Movies"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 128,
+                                    lineNumber: 127,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 127,
+                                lineNumber: 126,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 126,
+                            lineNumber: 125,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -27260,29 +27258,29 @@ class MainView extends (0, _reactDefault.default).Component {
                                         }
                                     }, movie._id, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 135,
+                                        lineNumber: 134,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 134,
+                                    lineNumber: 133,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 132,
+                            lineNumber: 131,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 125,
+                    lineNumber: 124,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 105,
+            lineNumber: 104,
             columnNumber: 7
         }, this);
     }
@@ -27295,7 +27293,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","axios":"jo6P5","../login-view/login-view":"9YtA0","prop-types":"7wKI2","../registration-view/registration-view":"3U8r7","../logout-button/logout-button":"65OQY","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","./main-view.scss":"eBaMl","react-bootstrap/Container":"hEdsw"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","axios":"jo6P5","../login-view/login-view":"9YtA0","prop-types":"7wKI2","../registration-view/registration-view":"3U8r7","../logout-button/logout-button":"65OQY","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","./main-view.scss":"eBaMl"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -29544,6 +29542,12 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _movieViewScss = require("./movie-view.scss");
 class MovieView extends (0, _reactDefault.default).Component {
     keypressCallback(event) {
@@ -29568,7 +29572,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                             children: "<"
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 22,
+                            lineNumber: 25,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -29576,7 +29580,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                             children: movie.Title
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 30,
+                            lineNumber: 33,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -29584,13 +29588,13 @@ class MovieView extends (0, _reactDefault.default).Component {
                             children: "✰"
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 31,
+                            lineNumber: 34,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 21,
+                    lineNumber: 24,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29607,7 +29611,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                                             children: "Genre: "
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 38,
+                                            lineNumber: 41,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -29615,13 +29619,13 @@ class MovieView extends (0, _reactDefault.default).Component {
                                             children: movie.Genre.Name
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 39,
+                                            lineNumber: 42,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 37,
+                                    lineNumber: 40,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29632,7 +29636,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                                             children: "Director: "
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 45,
+                                            lineNumber: 48,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -29640,13 +29644,13 @@ class MovieView extends (0, _reactDefault.default).Component {
                                             children: movie.Director.Name
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 46,
+                                            lineNumber: 49,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 44,
+                                    lineNumber: 47,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29657,7 +29661,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                                             children: "Description: "
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 52,
+                                            lineNumber: 55,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -29665,19 +29669,19 @@ class MovieView extends (0, _reactDefault.default).Component {
                                             children: movie.Description
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 53,
+                                            lineNumber: 56,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 51,
+                                    lineNumber: 54,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 36,
+                            lineNumber: 39,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29686,24 +29690,24 @@ class MovieView extends (0, _reactDefault.default).Component {
                                 src: movie.ImagePath
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 61,
+                                lineNumber: 64,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 60,
+                            lineNumber: 63,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 34,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/movie-view/movie-view.jsx",
-            lineNumber: 19,
+            lineNumber: 22,
             columnNumber: 7
         }, this);
     }
@@ -29734,7 +29738,91 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","prop-types":"7wKI2","./movie-view.scss":"jnlR5"}],"jnlR5":[function() {},{}],"jo6P5":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","prop-types":"7wKI2","./movie-view.scss":"jnlR5","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/Button":"aPzUt"}],"jnlR5":[function() {},{}],"cMC39":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const Row = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = "div" , ...props }, ref)=>{
+    const decoratedBsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "row");
+    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
+    const minBreakpoint = (0, _themeProvider.useBootstrapMinBreakpoint)();
+    const sizePrefix = `${decoratedBsPrefix}-cols`;
+    const classes = [];
+    breakpoints.forEach((brkPoint)=>{
+        const propValue = props[brkPoint];
+        delete props[brkPoint];
+        let cols;
+        if (propValue != null && typeof propValue === "object") ({ cols  } = propValue);
+        else cols = propValue;
+        const infix = brkPoint !== minBreakpoint ? `-${brkPoint}` : "";
+        if (cols != null) classes.push(`${sizePrefix}${infix}-${cols}`);
+    });
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ref: ref,
+        ...props,
+        className: (0, _classnamesDefault.default)(className, decoratedBsPrefix, ...classes)
+    });
+});
+Row.displayName = "Row";
+exports.default = Row;
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2L2I6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCol", ()=>useCol);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function useCol({ as , bsPrefix , className , ...props }) {
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "col");
+    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
+    const minBreakpoint = (0, _themeProvider.useBootstrapMinBreakpoint)();
+    const spans = [];
+    const classes = [];
+    breakpoints.forEach((brkPoint)=>{
+        const propValue = props[brkPoint];
+        delete props[brkPoint];
+        let span;
+        let offset;
+        let order;
+        if (typeof propValue === "object" && propValue != null) ({ span , offset , order  } = propValue);
+        else span = propValue;
+        const infix = brkPoint !== minBreakpoint ? `-${brkPoint}` : "";
+        if (span) spans.push(span === true ? `${bsPrefix}${infix}` : `${bsPrefix}${infix}-${span}`);
+        if (order != null) classes.push(`order${infix}-${order}`);
+        if (offset != null) classes.push(`offset${infix}-${offset}`);
+    });
+    return [
+        {
+            ...props,
+            className: (0, _classnamesDefault.default)(className, ...spans, ...classes)
+        },
+        {
+            as,
+            bsPrefix,
+            spans
+        }
+    ];
+}
+const Col = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+    const [{ className , ...colProps }, { as: Component = "div" , bsPrefix , spans  }] = useCol(props);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
+        ...colProps,
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, !spans.length && bsPrefix)
+    });
+});
+Col.displayName = "Col";
+exports.default = Col;
+
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 module.exports = require("./lib/axios");
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -33628,58 +33716,7 @@ FormLabel.displayName = "FormLabel";
 FormLabel.defaultProps = defaultProps;
 exports.default = FormLabel;
 
-},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2L2I6":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useCol", ()=>useCol);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-function useCol({ as , bsPrefix , className , ...props }) {
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "col");
-    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
-    const minBreakpoint = (0, _themeProvider.useBootstrapMinBreakpoint)();
-    const spans = [];
-    const classes = [];
-    breakpoints.forEach((brkPoint)=>{
-        const propValue = props[brkPoint];
-        delete props[brkPoint];
-        let span;
-        let offset;
-        let order;
-        if (typeof propValue === "object" && propValue != null) ({ span , offset , order  } = propValue);
-        else span = propValue;
-        const infix = brkPoint !== minBreakpoint ? `-${brkPoint}` : "";
-        if (span) spans.push(span === true ? `${bsPrefix}${infix}` : `${bsPrefix}${infix}-${span}`);
-        if (order != null) classes.push(`order${infix}-${order}`);
-        if (offset != null) classes.push(`offset${infix}-${offset}`);
-    });
-    return [
-        {
-            ...props,
-            className: (0, _classnamesDefault.default)(className, ...spans, ...classes)
-        },
-        {
-            as,
-            bsPrefix,
-            spans
-        }
-    ];
-}
-const Col = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
-    const [{ className , ...colProps }, { as: Component = "div" , bsPrefix , spans  }] = useCol(props);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ...colProps,
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, !spans.length && bsPrefix)
-    });
-});
-Col.displayName = "Col";
-exports.default = Col;
-
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8zsCO":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8zsCO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -33793,40 +33830,7 @@ const FloatingLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , 
 FloatingLabel.displayName = "FloatingLabel";
 exports.default = FloatingLabel;
 
-},{"classnames":"jocGM","react":"21dqq","./FormGroup":"1qBHH","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cMC39":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const Row = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = "div" , ...props }, ref)=>{
-    const decoratedBsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "row");
-    const breakpoints = (0, _themeProvider.useBootstrapBreakpoints)();
-    const minBreakpoint = (0, _themeProvider.useBootstrapMinBreakpoint)();
-    const sizePrefix = `${decoratedBsPrefix}-cols`;
-    const classes = [];
-    breakpoints.forEach((brkPoint)=>{
-        const propValue = props[brkPoint];
-        delete props[brkPoint];
-        let cols;
-        if (propValue != null && typeof propValue === "object") ({ cols  } = propValue);
-        else cols = propValue;
-        const infix = brkPoint !== minBreakpoint ? `-${brkPoint}` : "";
-        if (cols != null) classes.push(`${sizePrefix}${infix}-${cols}`);
-    });
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
-        ref: ref,
-        ...props,
-        className: (0, _classnamesDefault.default)(className, decoratedBsPrefix, ...classes)
-    });
-});
-Row.displayName = "Row";
-exports.default = Row;
-
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e57ax":[function() {},{}],"3U8r7":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./FormGroup":"1qBHH","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e57ax":[function() {},{}],"3U8r7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$789c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34127,7 +34131,7 @@ $RefreshReg$(_c, "LogoutButton");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","./logout-button.scss":"7JI22","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Button":"aPzUt"}],"7JI22":[function() {},{}],"eBaMl":[function() {},{}],"hEdsw":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","./logout-button.scss":"7JI22","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Button":"aPzUt"}],"7JI22":[function() {},{}],"eBaMl":[function() {},{}],"lJZlQ":[function() {},{}],"hEdsw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -34152,6 +34156,6 @@ Container.displayName = "Container";
 Container.defaultProps = defaultProps;
 exports.default = Container;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lJZlQ":[function() {},{}]},["1xC6H","jVvJi","d8Dch"], "d8Dch", "parcelRequire5761")
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","jVvJi","d8Dch"], "d8Dch", "parcelRequire5761")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

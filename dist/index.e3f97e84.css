@@ -97,11 +97,7 @@ img {
 
 #logout-button {
   float: right;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  margin: 4px;
-  padding: 5px;
+  margin: 10px;
 }
 
 #logout-button:hover {

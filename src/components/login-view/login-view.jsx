@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import Axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -15,11 +15,10 @@ export function LoginView(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     /* Send a request to the server for authentication */
-    axios
-      .post('https://nyaliss-flix-27.herokuapp.com/login', {
-        Username: username,
-        Password: password,
-      })
+    Axios.post('https://nyaliss-flix-27.herokuapp.com/login', {
+      Username: username,
+      Password: password,
+    })
       .then((response) => {
         const data = response.data;
         props.onLoggedIn(data);

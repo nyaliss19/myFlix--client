@@ -1,8 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
 
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';

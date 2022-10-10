@@ -1,6 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -33,12 +35,6 @@ export class MainView extends React.Component {
       this.getUserData(accessToken, localStorage.getItem('user'));
     }
     console.log('main view mounted');
-  }
-
-  setSelectedMovie(newSelectedMovie) {
-    this.setState({
-      selectedMovie: newSelectedMovie,
-    });
   }
 
   // passed to LoginView
@@ -85,20 +81,14 @@ export class MainView extends React.Component {
       });
   }
 
-  // passed to RegistrationView
-  onRegister(registered, user) {
-    this.setState({
-      registered,
-      user,
-    });
-  }
-
   // passed to LogoutButton
   logoutUser(uselessParam) {
     this.setState({
       user: false,
       selectedMovie: null,
     });
+    localStorage.clear();
+    window.location.href = '/';
   }
 
   toRegistrationView(asdf) {
@@ -107,27 +97,21 @@ export class MainView extends React.Component {
     });
   }
 
+  receiveUpdatedUserDataFromMovieView(userData) {
+    this.setState({
+      userData,
+    });
+  }
+
   render() {
-    const { movies, selectedMovie, user, registered } = this.state;
+    const { movies, user, registered } = this.state;
 
     // RegistrationView if user not registered
-    if (!registered)
-      return (
-        <RegistrationView
-          onRegister={(registered, username) =>
-            this.onRegister(registered, username)
-          }
-        />
-      );
+    if (!registered) return <RegistrationView />;
 
     // LoginView if user is registered, but not logged in
     if (!user)
-      return (
-        <LoginView
-          onLoggedIn={(user) => this.onLoggedIn(user)}
-          toRegistrationView={(asdf) => this.toRegistrationView(asdf)}
-        />
-      );
+      return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
 
     // Empty MainView if there are no movies (or still loading)
     if (movies.length === 0)

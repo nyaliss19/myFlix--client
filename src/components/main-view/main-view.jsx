@@ -1,6 +1,5 @@
 import React from 'react';
-import axios from 'axios';
-import PropTypes from 'prop-types';
+import Axios from 'axios';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -19,24 +18,21 @@ export class MainView extends React.Component {
       movies: [],
       selectedMovie: null,
       user: null,
+      userData: null,
       registered: true,
     };
   }
 
-  getMovies(token) {
-    axios
-      .get('https://nyaliss-flix-27.herokuapp.com/movies', {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        //Assign the result to the state
-        this.setState({
-          movies: response.data,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
+  componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user'),
       });
+      this.getMovies(accessToken);
+      this.getUserData(accessToken, localStorage.getItem('user'));
+    }
+    console.log('main view mounted');
   }
 
   setSelectedMovie(newSelectedMovie) {
@@ -55,6 +51,38 @@ export class MainView extends React.Component {
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
+  }
+
+  getMovies(token) {
+    Axios.get('https://nyaliss-flix-27.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => {
+        //Assign the result to the state
+        this.setState({
+          movies: response.data,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  getUserData(token, username) {
+    Axios.get('https://nyaliss-flix-27.herokuapp.com/users/${username', {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => {
+        this.setState({
+          userData: response.data,
+        });
+        console.log(`This is the data we found: ${Object.keys(response.data)}`);
+        console.log('The current state is:');
+        console.log(this.state);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   // passed to RegistrationView

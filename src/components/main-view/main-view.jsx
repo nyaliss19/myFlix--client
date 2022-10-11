@@ -1,9 +1,14 @@
 import React from 'react';
 import Axios from 'axios';
 
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { DirectorView } from '../director-view/director-view';
+import { GenreView } from '../genre-view/genre-view';
+import { ProfileView } from '../profile-view/profile-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { LogoutButton } from '../logout-button/logout-button';
 import Row from 'react-bootstrap/Row';
@@ -119,53 +124,88 @@ export class MainView extends React.Component {
     // Render list of MovieCard if no movie is selected
     // Go to MovieView if a movie is selected
     return (
-      <div className='main-view'>
+      <Router>
         <Row>
           <Col>
             <LogoutButton
-              logoutUser={(uselessParam) => this.logoutUser(uselessParam)}
+              logoutUser={(user) => {
+                this.logoutUser(user);
+              }}
             />
           </Col>
         </Row>
-        {selectedMovie ? (
-          <Row>
-            <Col>
-              <MovieView
-                movie={selectedMovie}
-                onBackClick={(newSelectedMovie) => {
-                  this.setSelectedMovie(newSelectedMovie);
-                }}
-              />
-            </Col>
-          </Row>
-        ) : (
-          <div>
-            <Row className='justify-content-md-center'>
-              <Col md={4}>
-                <h1 className='display-2'>Movies</h1>
-              </Col>
-            </Row>
 
-            <Row className='justify-content-md-center'>
-              {movies.map((movie) => (
-                <Col>
-                  <MovieCard
-                    key={movie._id}
-                    movie={movie}
-                    onMovieClick={(movie) => {
-                      this.setSelectedMovie(movie);
+        {/* this is what renders by default after logging in */}
+        <Row className='main-view justify-content-md-center'>
+          <Route
+            exact
+            path='/'
+            render={() => {
+              return movies.map((m) => (
+                <Col md={3} key={m._id}>
+                  <MovieCard movie={m} />
+                </Col>
+              ));
+            }}
+          />
+          <Route
+            path='/movies/:movieId'
+            render={({ match }) => {
+              return (
+                <Col md={8}>
+                  <MovieView
+                    movie={movies.find((m) => m._id === match.params.movieId)}
+                    onBackClick={() => history.back()}
+                    userData={this.state.userData}
+                    sendUpdatedUserDataToMainView={(userData) => {
+                      this.receiveUpdatedUserDataFromMovieView(userData);
                     }}
                   />
                 </Col>
-              ))}
-            </Row>
-          </div>
-        )}
-      </div>
+              );
+            }}
+          />
+
+          {/* this route is linked to from MovieCard */}
+          <Route
+            path='/director/:name'
+            render={({ match }) => {
+              if (movies.length === 0) return <div className='main-view' />;
+              return (
+                <Col md={8}>
+                  <DirectorView
+                    director={
+                      movies.find((m) => m.Director.Name === match.params.name)
+                        .Director
+                    }
+                    onBackClick={() => history.back()}
+                    movies={movies}
+                  />
+                </Col>
+              );
+            }}
+          />
+
+          {/*this route is linked to from main movie list page,
+          MovieView, DirectorView, and GenreView */}
+          <Route
+            exact
+            path='/profile'
+            render={() => {
+              return (
+                <ProfileView
+                  user={user}
+                  movies={movies}
+                  userData={this.state.userData}
+                  sendUpdatedUserDataToMainView={(userData) => {
+                    this.receiveUpdatedUserDataFromMovieView(userData);
+                  }}
+                />
+              );
+            }}
+          />
+        </Row>
+      </Router>
     );
   }
 }
-
-MainView.propTypes = {};
-
-export default MainView;

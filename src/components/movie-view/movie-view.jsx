@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
+import { FavoriteButton } from '../favorite-button/favorite-button';
 
 import './movie-view.scss';
 
@@ -68,6 +70,8 @@ export class MovieView extends React.Component {
   }
 }
 
+// prop-types
+// Give informational warnings in browser if data does not match required shape
 MovieView.propTypes = {
   movie: PropTypes.shape({
     Title: PropTypes.string.isRequired,
@@ -87,4 +91,12 @@ MovieView.propTypes = {
     }),
   }).isRequired,
   onBackClick: PropTypes.func.isRequired,
+  userData: PropTypes.shape({
+    Birthday: PropTypes.string,
+    Email: PropTypes.string,
+    FavoriteMovies: PropTypes.arrayOf(PropTypes.string),
+    Password: PropTypes.string,
+    Username: PropTypes.string,
+    _id: PropTypes.string,
+  }),
 };

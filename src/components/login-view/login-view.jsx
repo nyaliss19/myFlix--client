@@ -27,7 +27,7 @@ export class LoginView extends React.Component {
 
       // Send auth request to server
       axios
-        .post('https://rcarpus-movie-api.herokuapp.com/login', loginCredentials)
+        .post('https://nyaliss-flix-27.herokuapp.com/login', loginCredentials)
         .then((response) => {
           const data = response.data;
           this.onLoggedIn(data);

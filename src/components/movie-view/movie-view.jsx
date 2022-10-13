@@ -9,63 +9,164 @@ import { FavoriteButton } from '../favorite-button/favorite-button';
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
-  keypressCallback(event) {
-    console.log(event.key);
+  constructor(props) {
+    super();
+    this.state = {
+      movie: props.movie,
+      userData: props.userData,
+      isFavorite: false, //will be updated in componentWillMount
+    };
+    this.sendUpdatedUserDataToMainView = props.sendUpdatedUserDataToMainView;
   }
 
-  componentDidMount() {
-    document.addEventListener('keypress', this.keypressCallback);
+  //Determine if movie is favorite movie before mounting
+  //so that the correct value is sent to favorite button
+  componentWillMount() {
+    console.log(`A movie view for ${this.state.movie.Title} will be rendered.`);
+    this.setState(
+      {
+        isFavorite: this.isFavoriteMovie(),
+      },
+      () => console.log(this.state)
+    );
+  }
+
+  // used by componentWillMount()
+  isFavoriteMovie() {
+    if (this.state.userData.FavoriteMovies) {
+      return (
+        this.state.userData.FavoriteMovies.indexOf(this.state.movie._id) > -1
+      );
+    }
+  }
+
+  //Removes movie from user's favorites list
+  // sent as prop to FavoriteButton
+  removeFromFavorites() {
+    Axios.delete(
+      `https://nyaliss-flix-27.herokuapp.com/users/${localStorage.getItem(
+        'user'
+      )}/movies/${this.state.movie._id}`,
+      {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      }
+    )
+      .then((response) => {
+        this.sendUpdatedUserDataToMainView(response.data);
+        this.setState({
+          userData: response.data,
+          isFavorite: false,
+        });
+        console.log('We deleted a movie');
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  // adds a movie to user's favorites list
+  // sent as a prop to FavoriteButton
+  addToFavorites() {
+    let authHeader = {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+    };
+    Axios.post(
+      `https://nyaliss-flix-27.herokuapp.com/users/${localStorage.getItem(
+        'user'
+      )}/movies/${this.state.movie._id}`,
+      {},
+      authHeader
+    )
+      .then((response) => {
+        this.sendUpdatedUserDataToMainView(response.data);
+        this.setState({
+          userData: response.data,
+          isFavorite: true,
+        });
+        console.log('We added a movie!');
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   render() {
     const { movie, onBackClick } = this.props;
 
     return (
-      <Row className='movie-view'>
-        <Col lg={8}>
-          <div className='movie-view__title-line'>
-            <Button
-              className='movie-view-button'
-              onClick={() => {
-                onBackClick(null);
-              }}
-            >
-              &lt;
-            </Button>
-            <span className='movie-view__title'> {movie.Title} </span>
-            <Button className='movie-view-button'>&#10032;</Button>
-          </div>
-
-          <div className='movie-info'>
-            <div className='movie-view__line'>
-              <span className='movie-view__line__label'>Genre: </span>
-              <span className='movie-view__line__value'>
-                {movie.Genre.Name}
-              </span>
+      <div className='movie-view'>
+        <Row>
+          <Col sm={12} md={9}>
+            <div className='movie-view__title-line'>
+              <Button
+                id='back-button'
+                onClick={() => {
+                  onBackClick(null);
+                }}
+              >
+                &lt;
+              </Button>
+              <span className='movie-view__title'>{movie.Title}</span>
+              <FavoriteButton
+                isFavorite={this.state.isFavorite}
+                removeFromFavorites={() => {
+                  this.removeFromFavorites();
+                }}
+                addToFavorites={() => {
+                  this.addToFavorites();
+                }}
+              />
             </div>
+          </Col>
 
-            <div className='movie-view__line'>
-              <span className='movie-view__line__label'>Director: </span>
-              <span className='movie-view__line__value'>
-                {movie.Director.Name}
-              </span>
+          <Col>
+            <Link to={'/profile'}>
+              <Button
+                className='btn btn-secondary btn-sm genre-view__title-line__nav'
+                type='button'
+              >
+                Profile
+              </Button>
+            </Link>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col lg={8}>
+            <div className='movie-info'>
+              <div className='movie-view__line'>
+                <span className='movie-view__line__label'>Genre: </span>
+                <Link to={`/genres/${movie.Genre.Name}`}>
+                  <span className='movie-view__line__value'>
+                    {movie.Genre.Name}
+                  </span>
+                </Link>
+              </div>
+
+              <div className='movie-view__line'>
+                <span className='movie-view__line__label'>Director: </span>
+                <Link to={`/directors/${movie.Director.Name}`}>
+                  <span className='movie-view__line__value'>
+                    {movie.Director.Name}
+                  </span>
+                </Link>
+              </div>
+
+              <div className='movie-view__line description'>
+                <span className='movie-view__line__label'>Description: </span>
+                <span className='movie-view__line__value'>
+                  {movie.Description}
+                </span>
+              </div>
             </div>
-
-            <div className='movie-view__line description'>
-              <span className='movie-view__line__label'>Description: </span>
-              <span className='movie-view__line__value'>
-                {movie.Description}
-              </span>
+          </Col>
+          <Col lg={4}>
+            <div className='movie-poster'>
+              <img src={imgPath + movie.ImagePath} />
             </div>
-          </div>
-        </Col>
-
-        <Col lg={4}>
-          <div className='movie-poster'>
-            <img src={movie.ImagePath} />
-          </div>
-        </Col>
-      </Row>
+          </Col>
+        </Row>
+      </div>
     );
   }
 }

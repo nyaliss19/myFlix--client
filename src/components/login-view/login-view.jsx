@@ -26,8 +26,10 @@ export class LoginView extends React.Component {
       };
 
       // Send auth request to server
-      axios
-        .post('https://nyaliss-flix-27.herokuapp.com/login', loginCredentials)
+      Axios.post(
+        'https://nyaliss-flix-27.herokuapp.com/login',
+        loginCredentials
+      )
         .then((response) => {
           const data = response.data;
           this.onLoggedIn(data);
@@ -41,7 +43,6 @@ export class LoginView extends React.Component {
 
   handleClickRegister(e) {
     e.preventDefault();
-    // LOOK FOR A WAY TO REFACTOR THIS SO THAT I DO NOT NEED THIS USELESS PARAMETER
     this.toRegistrationView('');
   }
 
@@ -54,7 +55,11 @@ export class LoginView extends React.Component {
           </Col>
         </Row>
 
-        <Form className='login-form'>
+        <Form
+          className='login-form'
+          ref={this.form}
+          onSubmit={(e) => e.preventDefault()}
+        >
           <Form.Group controlId='formUsername'>
             <Row className='login-view__line'>
               <Col sm={0} md={3}></Col>
@@ -62,10 +67,7 @@ export class LoginView extends React.Component {
                 <Form.Label>Username:</Form.Label>
               </Col>
               <Col sm={12} md={4}>
-                <Form.Control
-                  type='text'
-                  onChange={(e) => setUsername(e.target.value)}
-                />
+                <Form.Control required />
               </Col>
             </Row>
           </Form.Group>
@@ -77,10 +79,7 @@ export class LoginView extends React.Component {
                 <Form.Label>Password:</Form.Label>
               </Col>
               <Col sm={12} md={4}>
-                <Form.Control
-                  type='text'
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+                <Form.Control type='password' required />
               </Col>
             </Row>
           </Form.Group>
@@ -88,7 +87,11 @@ export class LoginView extends React.Component {
           <Row className='login-view__line'>
             <Col md={8}></Col>
             <Col>
-              <Button variant='primary' type='submit' onClick={handleSubmit}>
+              <Button
+                variant='primary'
+                type='submit'
+                onClick={this.handleSubmit}
+              >
                 Log in
               </Button>
             </Col>
@@ -103,7 +106,7 @@ export class LoginView extends React.Component {
             <Button
               variant='secondary'
               type='submit'
-              onClick={handleClickRegister}
+              onClick={this.handleClickRegister}
             >
               Register
             </Button>

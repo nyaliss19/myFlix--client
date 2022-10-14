@@ -1,0 +1,167 @@
+html body {
+  background-color: #75b8c8;
+  margin: 10px;
+}
+
+.login-view {
+  background-color: #cdd3d5;
+  border: 2px solid #000;
+  border-radius: 15px;
+  padding: 50px;
+}
+
+.register-row {
+  margin-top: 50px;
+}
+
+.login-view__line {
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .login-form, .register-row {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-view {
+    padding: 5px;
+  }
+}
+
+
+
+
+
+.movie-view {
+  background-color: #cdd3d5;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px #00000080;
+}
+
+img {
+  max-width: 100%;
+  max-height: 700px;
+  height: auto;
+  border-radius: 25px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 0 5px 5px #00000080;
+}
+
+#back-button, #favorite-button {
+  color: #000;
+  background-color: #fff;
+  border: none;
+  margin: 5px;
+  padding: 0 0 7px;
+  font-size: 30px;
+}
+
+.movie-view-button:hover {
+  cursor: pointer;
+}
+
+.movie-view__title-line {
+  padding: 2px;
+  font-family: Lucida Console;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.movie-view__line__label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.movie-view__line__value {
+  font-size: 18px;
+}
+
+.description {
+  padding-top: 3em;
+}
+
+.director-view {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px #00000080;
+}
+
+.director-view__title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.director-view__info__description-label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.director-view__info__movie-list-label {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.genre-view {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px #00000080;
+}
+
+.genre-view__title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.genre-view__info__description-label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.genre-view__info__movie-list-label {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.genre-view__title-line__nav {
+  margin: 10px;
+}
+
+
+
+.registration-view {
+  background-color: #cdd3d5;
+  border: 2px solid #000;
+  border-radius: 15px;
+  padding: 50px;
+}
+
+.registration-form__label-tips {
+  color: gray;
+  text-align: right;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.registration-form__line, .register-button {
+  margin-top: 10px;
+}
+
+#logout-button {
+  float: right;
+  margin: 10px;
+}
+
+#logout-button:hover {
+  cursor: pointer;
+}
+
+
+

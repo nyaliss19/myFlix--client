@@ -39716,7 +39716,7 @@ RegistrationView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"f4wnQ","react":"b4tPL","prop-types":"dJwFZ","react-bootstrap/Row":"hTnxu","react-bootstrap/Col":"2EEGC","react-bootstrap/Form":"3Pwri","react-bootstrap/Button":"kaOek","./registration-view.scss":"619BP","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"62Vgh","react-dom":"hKAbJ","axios":"gIwns"}],"619BP":[function() {},{}],"eStZm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"f4wnQ","react":"b4tPL","axios":"gIwns","prop-types":"dJwFZ","react-bootstrap/Row":"hTnxu","react-bootstrap/Col":"2EEGC","react-bootstrap/Form":"3Pwri","react-bootstrap/Button":"kaOek","./registration-view.scss":"619BP","react-dom":"hKAbJ","@parcel/transformer-js/src/esmodule-helpers.js":"j7FRh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"62Vgh"}],"619BP":[function() {},{}],"eStZm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2a46 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

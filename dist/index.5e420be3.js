@@ -39357,8 +39357,7 @@ class RegistrationView extends (0, _reactDefault.default).Component {
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
                                             className: "registration-form__line-label",
                                             children: [
-                                                "Username:",
-                                                " ",
+                                                "Username",
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     className: "registration-form__label-tips",
                                                     children: "(5+ characters, no spaces)"
@@ -39422,7 +39421,6 @@ class RegistrationView extends (0, _reactDefault.default).Component {
                                             className: "registration-form__line-label",
                                             children: [
                                                 "Enter desired password",
-                                                " ",
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     className: "registration-form__label-tips",
                                                     children: "(must not be blank)"
@@ -39486,7 +39484,6 @@ class RegistrationView extends (0, _reactDefault.default).Component {
                                             className: "registration-form__line-label",
                                             children: [
                                                 "Re-enter password:",
-                                                " ",
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     className: "registration-form__label-tips",
                                                     children: "passwords must match"
@@ -39549,8 +39546,7 @@ class RegistrationView extends (0, _reactDefault.default).Component {
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
                                             className: "registration-form__line-label",
                                             children: [
-                                                "Email:",
-                                                " ",
+                                                "Email",
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     className: "registration-form__label-tips",
                                                     children: "(required)"
@@ -39613,8 +39609,7 @@ class RegistrationView extends (0, _reactDefault.default).Component {
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
                                             className: "registration-form__line-label",
                                             children: [
-                                                "Birthday:",
-                                                " ",
+                                                "Birthday",
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     className: "registration-form__label-tips",
                                                     children: "(optional)"
@@ -39707,9 +39702,7 @@ class RegistrationView extends (0, _reactDefault.default).Component {
         }, this);
     }
 }
-RegistrationView.propTypes = {
-    onRegister: (0, _propTypesDefault.default).func.isRequired
-};
+RegistrationView.propTypes = {};
 
   $parcel$ReactRefreshHelpers$c936.postlude(module);
 } finally {

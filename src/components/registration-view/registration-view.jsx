@@ -78,7 +78,7 @@ export class RegistrationView extends React.Component {
               <Col md={emptySize}></Col>
               <Col md={labelSize}>
                 <Form.Label className='registration-form__line-label'>
-                  Username:{' '}
+                  Username
                   <span className='registration-form__label-tips'>
                     (5+ characters, no spaces)
                   </span>
@@ -99,7 +99,7 @@ export class RegistrationView extends React.Component {
               <Col md={emptySize}></Col>
               <Col md={labelSize}>
                 <Form.Label className='registration-form__line-label'>
-                  Enter desired password{' '}
+                  Enter desired password
                   <span className='registration-form__label-tips'>
                     (must not be blank)
                   </span>
@@ -120,7 +120,7 @@ export class RegistrationView extends React.Component {
               <Col md={emptySize}></Col>
               <Col md={labelSize}>
                 <Form.Label className='registration-form__line-label'>
-                  Re-enter password:{' '}
+                  Re-enter password:
                   <span className='registration-form__label-tips'>
                     passwords must match
                   </span>
@@ -141,7 +141,7 @@ export class RegistrationView extends React.Component {
               <Col md={emptySize}></Col>
               <Col md={labelSize}>
                 <Form.Label className='registration-form__line-label'>
-                  Email:{' '}
+                  Email
                   <span className='registration-form__label-tips'>
                     (required)
                   </span>
@@ -162,7 +162,7 @@ export class RegistrationView extends React.Component {
               <Col md={emptySize}></Col>
               <Col md={labelSize}>
                 <Form.Label className='registration-form__line-label'>
-                  Birthday:{' '}
+                  Birthday
                   <span className='registration-form__label-tips'>
                     (optional)
                   </span>
@@ -196,6 +196,4 @@ export class RegistrationView extends React.Component {
   }
 }
 
-RegistrationView.propTypes = {
-  onRegister: PropTypes.func.isRequired,
-};
+RegistrationView.propTypes = {};

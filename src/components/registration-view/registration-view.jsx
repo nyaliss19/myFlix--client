@@ -37,10 +37,7 @@ export class RegistrationView extends React.Component {
       if (this.form.current[4].value !== '') {
         newUserInfo.Birthday = this.form.current[4].value;
       }
-      Axios.post(
-        'https://nyaliss-flix-27.herokuapp.com/users/register',
-        newUserInfo
-      )
+      Axios.post('https://nyaliss-flix-27.herokuapp.com/users/', newUserInfo)
         .then((response) => {
           const data = response.data;
           console.log('registered successful');

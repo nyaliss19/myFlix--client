@@ -1,7 +1,12 @@
 import React from 'react';
 import Axios from 'axios';
 
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Redirect,
+} from 'react-router-dom';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -142,73 +147,76 @@ export class MainView extends React.Component {
 
         {/* this is what renders by default after logging in */}
         <Row className='main-view justify-content-md-center'>
-          <Route
-            exact
-            path='/'
-            render={() => {
-              return movies.map((m) => (
-                <Col md={3} key={m._id}>
-                  <MovieCard movie={m} />
-                </Col>
-              ));
-            }}
-          />
-          <Route
-            path='/movies/:movieId'
-            render={({ match }) => {
-              return (
-                <Col md={8}>
-                  <MovieView
-                    movie={movies.find((m) => m._id === match.params.movieId)}
-                    onBackClick={() => history.back()}
+          <Routes>
+            <Route
+              exact
+              path='/'
+              render={() => {
+                return movies.map((m) => (
+                  <Col md={3} key={m._id}>
+                    <MovieCard movie={m} />
+                  </Col>
+                ));
+              }}
+            />
+            <Route
+              path='/movies/:movieId'
+              render={({ match }) => {
+                return (
+                  <Col md={8}>
+                    <MovieView
+                      movie={movies.find((m) => m._id === match.params.movieId)}
+                      onBackClick={() => history.back()}
+                      userData={this.state.userData}
+                      sendUpdatedUserDataToMainView={(userData) => {
+                        this.receiveUpdatedUserDataFromMovieView(userData);
+                      }}
+                    />
+                  </Col>
+                );
+              }}
+            />
+
+            {/* this route is linked to from MovieCard */}
+            <Route
+              path='/director/:name'
+              render={({ match }) => {
+                if (movies.length === 0) return <div className='main-view' />;
+                return (
+                  <Col md={8}>
+                    <DirectorView
+                      director={
+                        movies.find(
+                          (m) => m.Director.Name === match.params.name
+                        ).Director
+                      }
+                      onBackClick={() => history.back()}
+                      movies={movies}
+                    />
+                  </Col>
+                );
+              }}
+            />
+
+            {/*this route is linked to from main movie list page,
+          MovieView, DirectorView, and GenreView */}
+            <Route
+              exact
+              path='/profile'
+              render={() => {
+                return (
+                  <ProfileView
+                    user={user}
+                    movies={movies}
                     userData={this.state.userData}
                     sendUpdatedUserDataToMainView={(userData) => {
                       this.receiveUpdatedUserDataFromMovieView(userData);
                     }}
                   />
-                </Col>
-              );
-            }}
-          />
-
-          {/* this route is linked to from MovieCard */}
-          <Route
-            path='/director/:name'
-            render={({ match }) => {
-              if (movies.length === 0) return <div className='main-view' />;
-              return (
-                <Col md={8}>
-                  <DirectorView
-                    director={
-                      movies.find((m) => m.Director.Name === match.params.name)
-                        .Director
-                    }
-                    onBackClick={() => history.back()}
-                    movies={movies}
-                  />
-                </Col>
-              );
-            }}
-          />
-
-          {/*this route is linked to from main movie list page,
-          MovieView, DirectorView, and GenreView */}
-          <Route
-            exact
-            path='/profile'
-            render={() => {
-              return (
-                <ProfileView
-                  user={user}
-                  movies={movies}
-                  userData={this.state.userData}
-                  sendUpdatedUserDataToMainView={(userData) => {
-                    this.receiveUpdatedUserDataFromMovieView(userData);
-                  }}
-                />
-              );
-            }}
-          />
+                );
+              }}
+            />
+          </Routes>
         </Row>
       </Router>
     );

@@ -151,7 +151,7 @@ export class MainView extends React.Component {
             <Route
               exact
               path='/'
-              render={() => {
+              element={() => {
                 return movies.map((m) => (
                   <Col md={3} key={m._id}>
                     <MovieCard movie={m} />
@@ -161,7 +161,7 @@ export class MainView extends React.Component {
             />
             <Route
               path='/movies/:movieId'
-              render={({ match }) => {
+              element={({ match }) => {
                 return (
                   <Col md={8}>
                     <MovieView

@@ -118,13 +118,11 @@ export class MainView extends React.Component {
     if (!registered) return <RegistrationView />;
 
     // LoginView if user is registered, but not logged in
-    if (!user)
-      return (
-        <LoginView
-          onLoggedIn={(user) => this.onLoggedIn(user)}
-          toRegistrationView={(asdf) => this.toRegistrationView(asdf)}
-        />
-      );
+    if (!user) return;
+    <LoginView
+      onLoggedIn={(user) => this.onLoggedIn(user)}
+      toRegistrationView={(asdf) => this.toRegistrationView(asdf)}
+    />;
 
     // Empty MainView if there are no movies (or still loading)
     if (movies.length === 0)

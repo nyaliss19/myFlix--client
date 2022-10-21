@@ -80,7 +80,6 @@ export class MainView extends React.Component {
         this.setState({
           userData: response.data,
         });
-        console.log(`This is the data we found: ${Object.keys(response.data)}`);
         console.log('The current state is:');
         console.log(this.state);
       })

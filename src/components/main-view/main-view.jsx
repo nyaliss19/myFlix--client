@@ -73,7 +73,7 @@ export class MainView extends React.Component {
   }
 
   getUserData(token, username) {
-    Axios.get('https://nyaliss-flix-27.herokuapp.com/users/${username', {
+    Axios.get(`https://nyaliss-flix-27.herokuapp.com/users/${username}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => {
@@ -147,7 +147,7 @@ export class MainView extends React.Component {
           <Route
             exact
             path='/'
-            element={() => {
+            render={() => {
               return movies.map((m) => (
                 <Col md={3} key={m._id}>
                   <MovieCard movie={m} />
@@ -157,7 +157,7 @@ export class MainView extends React.Component {
           />
           <Route
             path='/movies/:movieId'
-            element={({ match }) => {
+            render={({ match }) => {
               return (
                 <Col md={8}>
                   <MovieView
